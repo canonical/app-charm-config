@@ -1,0 +1,63 @@
+name: go-app
+type: charm
+base: ubuntu@24.04
+
+platforms:
+  amd64:
+
+summary: A very short one-line summary of the Go application.
+description: |
+  A comprehensive overview of your Go application.
+extensions:
+  - go-framework
+
+config:
+  options:
+    user-config-string:
+      default: defaultstring
+      description: string description
+      type: string
+    user-config-string-no-default:
+      description: string-no-default description
+      type: string
+    user-config-int:
+      default: 1
+      description: int description
+      type: int
+    user-config-int-no-default:
+      description: int description
+      type: int
+    user-config-boolean:
+      default: false
+      description: boolean description
+      type: boolean
+    user-config-float:
+      default: 3.3
+      description: float description
+      type: float
+
+requires:
+  postgresql:
+    interface: postgresql_client
+    optional: False
+    limit: 1
+  mysql:
+    interface: mysql_client
+    optional: True
+    limit: 1
+  mongodb:
+    interface: mongodb_client
+    optional: True
+    limit: 1
+  redis:
+    interface: redis
+    optional: True
+    limit: 1
+  s3:
+    interface: s3
+    optional: False
+    limit: 1
+  saml:
+    interface: saml
+    optional: True
+    limit: 1

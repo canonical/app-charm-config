@@ -1,0 +1,32 @@
+name: Spread
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  spread-tests:
+    name: Spread tests
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/checkout@v3
+        with:
+          # spread does not work correctly with lxd.
+          # See https://github.com/snapcore/spread/pull/179
+          # Once the fix is merged, update the repository
+          # to snapcore/spread
+          repository: javierdelapuente/spread
+          ref: lxd-improvements
+          path: _spread
+
+      - uses: actions/setup-go@v5
+
+      - uses: canonical/setup-lxd@v0.1.1
+
+      - name: Build and run spread
+        run: |
+          (cd _spread/cmd/spread && go build)
+          _spread/cmd/spread/spread -v

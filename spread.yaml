@@ -1,0 +1,17 @@
+project: paascharmgogenerator
+
+path: /paascharmgogenerator
+
+backends:
+    lxd:
+        systems: [ubuntu-24.04]
+
+prepare: |
+  snap install go --classic --channel=1.18/stable
+  snap install charmcraft --channel=latest/edge --classic
+  GOBIN=/usr/local/bin go install -buildvcs=false .
+
+suites:
+    tests/:
+        summary: Simple examples with real charmcraft.yaml files
+
