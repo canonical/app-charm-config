@@ -7,7 +7,7 @@ linters-settings:
     sections:
       - standard
       - default
-      - Prefix(github.com/canonical/paascharmgen)
+      - Prefix(github.com/canonical/app-charm-config)
 issues:
   # these values ensure that all issues will be surfaced
   max-issues-per-linter: 0

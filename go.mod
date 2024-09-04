@@ -1,4 +1,4 @@
-module github.com/canonical/paascharmgen
+module github.com/canonical/app-charm-config
 
 go 1.18
 

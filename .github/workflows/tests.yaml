@@ -41,5 +41,5 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          name: paascharmgen-test-coverage.html
+          name: app-charm-config-test-coverage.html
           path: ./*.html

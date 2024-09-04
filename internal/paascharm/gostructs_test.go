@@ -6,7 +6,7 @@ import (
 
 	"github.com/kr/pretty"
 
-	"github.com/canonical/paascharmgen/internal/paascharm"
+	"github.com/canonical/app-charm-config/internal/paascharm"
 )
 
 func TestConfigOptions(t *testing.T) {

@@ -13,7 +13,7 @@ environment:
 execute: |
   mkdir charm
   (cd charm && charmcraft init --profile go-framework)
-  paascharmgen -c ./charm/charmcraft.yaml -o ./config/config.go -p config
+  app-charm-config -c ./charm/charmcraft.yaml -o ./config/config.go -p config
   cat ./config/config.go
   go run .
 

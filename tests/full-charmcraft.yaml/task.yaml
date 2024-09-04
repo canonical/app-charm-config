@@ -56,7 +56,7 @@ environment:
 
 execute: |
   mkdir -p ./config
-  paascharmgen -c ./charm/charmcraft.yaml -o ./config/config.go -p config
+  app-charm-config -c ./charm/charmcraft.yaml -o ./config/config.go -p config
   cat ./config/config.go
   go run .
 
